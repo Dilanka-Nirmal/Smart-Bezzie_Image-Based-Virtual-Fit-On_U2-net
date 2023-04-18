@@ -17,10 +17,10 @@ def model(model_name='u2net'):
         net = U2NETP(3,1)
 
     # Apply this code line when using GPU
-    # net.load_state_dict(torch.load(model_dir))
+    net.load_state_dict(torch.load(model_dir))
 
     # Apply this code line when using CPU
-    net.load_state_dict(torch.load(model_dir, map_location=torch.device('cpu')))
+    # net.load_state_dict(torch.load(model_dir, map_location=torch.device('cpu')))
 
     if torch.cuda.is_available():
         net.cuda()
